@@ -1,14 +1,14 @@
 const chartWidth = 400;
-const chartHeight = 300;
+const chartHeight = 400;
 let data = [1200, 123, 120, 45, 50, 4];
 const margin = 20;
 const spacing = 15;
 let remaningSpace = chartWidth - (margin * 2) - (spacing * data.length - 1);
 let barWidth = remaningSpace / data.length;
-let tickNum = 10;
+let tickNum = 25;
 let tickLength = 10;
 let tickSpace = chartHeight / tickNum;
-let tickIncriment = chartHeight/tickNum;
+let tickIncriment = chartHeight / tickNum;
 let colors;
 let maxValue;
 let scaledData = []
@@ -21,13 +21,13 @@ function setup() {
     background(255);
     colors = [color('black'), color('pink'), color('blue')];
 
-maxValue = max(data);
-for (let i =0; i<data.length; i++){
-    let newValue = map(data[i],0,maxValue,0,chartHeight)
-    scaledData.push(newValue)
-}
-console.log(data);
-console.log(scaledData);
+    maxValue = max(data);
+    for (let i = 0; i < data.length; i++) {
+        let newValue = map(data[i], 0, maxValue, 0, chartHeight)
+        scaledData.push(newValue)
+    }
+    console.log(data);
+    console.log(scaledData);
 
 
 
